@@ -107,5 +107,5 @@ app.get("/deletebook/:id", (req, res) => {
 /// ROTAS
 
 app.use("/users", userRouter)
-
-app.listen(3000)
+const PORT = process.env.PORT || 3000
+app.listen(PORT)
