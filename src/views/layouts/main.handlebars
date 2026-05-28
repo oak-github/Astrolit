@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="shortcut icon" href="/img/saturno.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astrolit</title>
+</head>
+<body>
+  
+    {{> header}}
+      {{#if success_msg}}
+    <div class="success alert">
+        <p>{{success_msg}}</p>
+    </div>
+    {{/if}}
+    {{#if error_msg}}
+    <div class="error alert">
+        <p>{{error_msg}}</p>
+    </div>
+    {{/if}}
+    {{{body}}}
+</body>
+</html>

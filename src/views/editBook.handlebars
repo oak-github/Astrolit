@@ -1,0 +1,16 @@
+<main class="center">
+    <h1>Editar livro</h1>
+    <div id="addBookC" class="card center">
+        <form class="center" id="addBook" action="{{{chosenBook._id}}}" method="post">
+            <input value="{{{this._id}}}" type="hidden">
+            <label for="title">Título:</label>
+            <input required value="{{{chosenBook.title}}}" name="title" type="text">
+            <label for="author">Autor:</label>
+            <input required value="{{{chosenBook.author}}}" name="author" type="text">
+            <label for="pages">Quantidade de páginas</label>
+            <input required value="{{{chosenBook.pages}}}" name="pages" type="number">
+            <button type="submit">Editar</button>
+        </form>
+        <a href="/deletebook/{{{chosenBook._id}}}"><button>Deletar livro</button></a>
+    </div>
+</main>

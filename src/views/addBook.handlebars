@@ -1,0 +1,25 @@
+<main class="center">
+    <h1>Adicionar livro</h1>
+    <div id="addBookC" class="card">
+        {{#if errors}}
+        <div class="errors">
+            <ul class="errors_list">
+                
+            {{#each errors}}
+            <li class="error_format"><p>{{error}}</p></li>
+            {{/each}}
+            
+            </ul>
+            </div>
+        {{/if}}
+        <form class="center" id="addBook" action="addBook" method="post">
+            <label for="title">Título:</label>
+            <input value="{{tBook.title}}" name="title" type="text">
+            <label for="author">Autor:</label>
+            <input value="{{tBook.author}}"  name="author" type="text">
+            <label for="pages">Quantidade de páginas</label>
+            <input value="{{tBook.pages}}"  name="pages" type="number">
+            <button type="submit">Adicionar livro</button>
+        </form>
+    </div>
+</main>

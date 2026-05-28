@@ -1,0 +1,34 @@
+<main>
+    <span>
+        {{#if session.user}}
+    <h1>Principais livros</h1>
+    <a href="addBook"><button>Adicionar livro</button></a>
+    </span>
+    <hr>
+    <div class="books">
+        
+            {{#each allBooks}}
+            <div class="card center">
+                <h3>Título: {{title}}</h3>
+                <h4>Autor: {{{author}}}</h4>
+                <p>Quantidade de páginas: {{{pages}}}</p>
+                <a class="center" href="editbook/{{_id}}"><button class="center">Editar livro</button></a>
+            </div>
+            {{else}}
+            <h2>Nenhum livro cadastrado</h2>
+            {{/each}}
+        {{else}}
+        <div class="center" id="unlogged">
+           <h1>Crie ou entre em uma conta</h1>
+           <hr>
+           <p>Para usufluir do melhor site de biblioteca digital, e ter acesso a gestão, criação e edição de livros utilizando técnologia de ponta como HTML5, CSS3, NodeJS, Express em sinergia com o poderoso e simples MongoDB</p>
+           <div class="center">
+            <a href="/users/register"><button class="magic-btn">Criar conta</button></a>
+            <h2>ou</h2>
+            <a href="/users/login"><button class="magic-btn">Entrar em uma conta</button></a>
+           </div>
+           
+           </div>
+        {{/if}}
+    </div>
+</main>

@@ -1,0 +1,27 @@
+<main class="center">
+    <h1>Criar conta</h1>
+    <div id="addBookC" class="card">
+        {{#if errors}}
+        <div class="errors">
+            <ul class="errors_list">
+                
+            {{#each errors}}
+            <li class="error_format"><p>{{error}}</p></li>
+            {{/each}}
+            
+            </ul>
+            </div>
+        {{/if}}
+        
+        <form class="center" id="addBook" action="register" method="post">
+            <label for="name">Nome:</label>
+            <input value="{{tUser.name}}" autocomplete="off" name="name" type="text">
+            <label for="email">Email:</label>
+            <input value="{{tUser.email}}" autocomplete="off" name="email" type="text">
+            <label  for="password">Senha:</label>
+            <input value="{{tUser.password}}" autocomplete="off" name="password" type="password">
+            <button type="submit">Criar conta</button>
+        </form>
+        <a class="center" href="login">Já tem uma conta?</a>
+    </div>
+</main>

@@ -1,0 +1,14 @@
+<main id="special_main" class="center">
+    <div id="debug_grid">
+        
+            {{#each allUsers}}
+            <div class="card">
+                <p>Nome: {{name}}</p>
+                <p>Email: {{{email}}}</p>
+                <p>Senha criptografada: {{{password}}}</p>
+                <p>ID: {{{_id}}}</p>
+                <a href="/debug/{{{this._id}}}"><button>Deletar usuário</button></a>
+            </div>
+            {{/each}}
+    </div>
+</main>

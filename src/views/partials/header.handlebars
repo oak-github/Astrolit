@@ -1,0 +1,13 @@
+<nav>
+    <span class="center">
+    <img id="icon" src="img/saturno.png" alt="icon">
+    <a href="/"><h1>Astrolit</h1></a>
+    </span>
+    <ul class="center">
+        {{#if session.user}}
+        <li><a href="/debug">DEBUG</a></li>
+        <li><a href="/"><h3>Livros</h3></a></li>
+        <li><a href="/users/logout"><h3>{{session.user.name}}</h3></a></li>
+        {{/if}}
+    </ul>
+</nav>
