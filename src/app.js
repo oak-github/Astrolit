@@ -25,7 +25,6 @@ app.use(session({
 }))
 
 app.set("views", path.join(__dirname, "views"))
-
 app.use(express.static(path.join(__dirname, "public")))
 app.use(flash())
 app.use((req, res, next) => {
