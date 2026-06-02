@@ -7,21 +7,26 @@ import flash from "connect-flash"
 import userRouter from "./routes/userRoute.js"
 import user from "../src/models/user.js"
 import auth from "./helpers/auth.js"
+import path from "path"
+import { fileURLToPath } from "url"
 import { engine } from "express-handlebars"
 const app = express()
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
-
-app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.engine("handlebars", engine())
 app.set("view engine", "handlebars")
-
 app.use(session({
     secret: "secret",
     resave: false,
     saveUninitialized: false
 }))
+
+app.set("views", path.join(__dirname, "views"))
+
+app.use(express.static(path.join(__dirname, "public")))
 app.use(flash())
 app.use((req, res, next) => {
     res.locals.session = req.session
