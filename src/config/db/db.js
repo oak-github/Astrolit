@@ -1,7 +1,9 @@
 import mongoose from "mongoose";
+import dotenv from "dotenv"
+dotenv.config()
 
 function mongoDB(){
-mongoose.connect("mongodb://127.0.0.1:27017/astrolit").then(()=>{
+mongoose.connect(process.env.DATABASE_URL).then(()=>{
     console.log("MongoDB conectado");
     
 }).catch((err)=>{

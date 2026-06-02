@@ -10,7 +10,7 @@ import auth from "./helpers/auth.js"
 import { engine } from "express-handlebars"
 const app = express()
 
-connectMongo()
+
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -106,6 +106,7 @@ app.get("/deletebook/:id", (req, res) => {
 })
 /// ROTAS
 
+await connectMongo()
 app.use("/users", userRouter)
 const PORT = process.env.PORT || 3000
 app.listen(PORT)
